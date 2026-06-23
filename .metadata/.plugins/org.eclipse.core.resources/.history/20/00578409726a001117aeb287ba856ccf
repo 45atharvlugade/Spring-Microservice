@@ -1,0 +1,38 @@
+package com.stars.service;
+
+import java.util.Optional;
+
+import com.stars.entity.Employee;
+import com.stars.reposiotries.IEmployeeRepository;
+
+public class EmployeeService implements IEmployeeService {
+
+	private  IEmployeeRepository repo ;
+	
+	public EmployeeService(IEmployeeRepository repo) {
+		// TODO Auto-generated constructor stub
+		repo=repo;
+	}
+	
+	@Override
+	public String registerEmployee(Employee employee) {
+	repo.save(employee);
+		return null;
+	}
+
+	@Override
+	public Employee searchEmployee(Integer id) {
+		Optional<Employee> opt=repo.findById(id);
+		if(opt.isPresent()) {
+			
+		}
+		return null;
+	}
+
+	@Override
+	public String deleteEMployee(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

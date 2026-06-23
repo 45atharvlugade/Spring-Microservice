@@ -1,0 +1,13 @@
+package com.stars.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="department")
+public class Department {
+
+	private Integer departmentid;
+	private String departmentName;
+	private String departmentHead;
+}

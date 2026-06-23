@@ -1,0 +1,10 @@
+package com.stars.service;
+
+import com.stars.entity.Department;
+
+public interface IDeparftmentService {
+
+	public String registerDepartment(Department dep);
+	
+	public String getDepById(Integer id);
+}

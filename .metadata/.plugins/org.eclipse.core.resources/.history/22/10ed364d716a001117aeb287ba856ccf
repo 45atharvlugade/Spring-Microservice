@@ -1,0 +1,33 @@
+package com.stars.service;
+
+import com.stars.entity.Employee;
+import com.stars.reposiotries.IEmployeeRepository;
+
+public class EmployeeService implements IEmployeeService {
+
+	private  final IEmployeeRepository repo = null;
+	
+	public EmployeeService(IEmployeeRepository repo) {
+		// TODO Auto-generated constructor stub
+		repo=repo;
+	}
+	
+	@Override
+	public String registerEmployee(Employee employee) {
+	
+		return null;
+	}
+
+	@Override
+	public Employee searchEmployee(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteEMployee(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

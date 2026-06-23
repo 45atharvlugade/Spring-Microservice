@@ -1,0 +1,57 @@
+package com.stars.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+
+import com.stars.clients.IDepartmentCliet;
+import com.stars.dto.DepartmentDTO;
+import com.stars.dto.EmployeeDTO;
+import com.stars.entity.Employee;
+import com.stars.reposiotries.IEmployeeRepository;
+
+@Service
+public class EmployeeService implements IEmployeeService {
+
+	private  IEmployeeRepository repo ;
+	private IDepartmentCliet client;
+	
+	public EmployeeService(IEmployeeRepository repo,IDepartmentCliet client) {
+		// TODO Auto-generated constructor stub
+		this.repo=repo;
+		this.client=client;
+	}
+	
+	@Override
+	public String registerEmployee(Employee employee) {
+		
+		DepartmentDTO dto=client.getDepartment(employee.getDepartmentId());
+		if(dto!=null) {
+			repo.save(employee);
+			return "Employee is registyered with id "+employee.getEmployeeId()+" in Department id of "+employee.getDepartmentId();
+			
+		}
+		
+	
+		return "Not registered May be Department not found";
+	}
+
+	@Override
+	public EmployeeDTO searchEmployee(Integer id) {
+		Optional<Employee> opt=repo.findById(id);
+		if(opt.isPresent()) {
+			Employee emp= opt.get();
+			EmployeeDTO dto=new EmployeeDTO();
+			BeanUtils.copyProperties(emp, dto);
+		}
+		return null;
+	}
+
+	@Override
+	public String deleteEMployee(Integer id) {
+	 repo.deleteById(id);
+		return null;
+	}
+
+}

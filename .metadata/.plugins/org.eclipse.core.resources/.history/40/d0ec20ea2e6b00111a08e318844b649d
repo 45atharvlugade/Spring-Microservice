@@ -1,0 +1,9 @@
+package com.stars.dto;
+
+public class DepartmentDTO {
+
+	private Integer depId;
+	private String  depName;
+	private Integer departmentSize;
+	private String depHead;
+}

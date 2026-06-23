@@ -1,0 +1,28 @@
+package com.stars.controller;
+
+import org.springframework.web.bind.annotation.*;
+
+import com.stars.entity.Department;
+import com.stars.service.IDeparftmentService;
+
+@RestController
+@RequestMapping("/departments")
+public class DepartmentController {
+
+    private IDeparftmentService service;
+
+    public DepartmentController(IDeparftmentService service) {
+        this.service = service;
+    }
+
+
+    @PostMapping("/register")
+    public String registerDepartment(@RequestBody Department dep) {
+        return service.registerDepartment(dep);
+    }
+
+    @GetMapping("/{id}")
+    public Department getDepartmentById(@PathVariable Integer id) {
+        return service.getDepById(id);
+    }
+}

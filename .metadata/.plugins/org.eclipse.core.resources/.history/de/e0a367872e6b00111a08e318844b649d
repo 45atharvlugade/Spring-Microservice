@@ -1,0 +1,5 @@
+package com.stars.clients;
+
+public interface IDepartmentCliet {
+
+}

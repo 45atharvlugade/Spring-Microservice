@@ -1,0 +1,10 @@
+package com.stars.service;
+
+import com.stars.entity.Employee;
+
+public interface IEmployeeService {
+
+	public String registerEmployee(Employee employee);
+	
+	public Employee searchEmployee(Integer id);
+}

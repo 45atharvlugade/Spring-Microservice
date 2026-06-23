@@ -1,0 +1,6 @@
+package com.stars.service;
+
+public interface IEmployeeService {
+
+	public String registerEmployee();
+}

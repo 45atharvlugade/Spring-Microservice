@@ -1,0 +1,22 @@
+package com.stars.entity;
+
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="department")
+public class Department {
+
+	@Id
+	@SequenceGenerator(name = "seq",schema = "eSeq",initialValue = 1000,allocationSize = 3)
+	@GeneratedValue(generator = "seq")
+	private Integer departmentid;
+	private String departmentName;
+	private String departmentHead;
+	private List<Employee> employee;
+}

@@ -1,0 +1,5 @@
+package com.stars.entity;
+
+public class Employee {
+
+}

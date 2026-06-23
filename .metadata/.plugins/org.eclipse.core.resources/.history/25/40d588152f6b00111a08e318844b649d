@@ -1,0 +1,13 @@
+package com.stars.clients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.stars.dto.DepartmentDTO;
+
+@FeignClient(name="department-service")
+public interface IDepartmentCliet {
+
+	
+	public DepartmentDTO getDepartment(@PathVariable Integer id);
+}

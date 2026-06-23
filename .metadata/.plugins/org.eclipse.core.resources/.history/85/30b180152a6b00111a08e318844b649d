@@ -1,0 +1,19 @@
+package com.stars.service;
+
+import com.stars.entity.Department;
+
+public class DepartmentService implements IDeparftmentService {
+
+	@Override
+	public String registerDepartment(Department dep) {
+		
+		return null;
+	}
+
+	@Override
+	public String getDepById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

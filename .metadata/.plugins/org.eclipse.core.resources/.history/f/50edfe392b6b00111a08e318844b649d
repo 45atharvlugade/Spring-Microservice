@@ -1,0 +1,34 @@
+package com.stars.service;
+
+import java.util.Optional;
+
+import com.stars.entity.Department;
+import com.stars.repositories.IDepartmentRepository;
+
+public class DepartmentService implements IDeparftmentService {
+
+	private IDepartmentRepository repo;
+	
+	public DepartmentService(IDepartmentRepository repo) {
+	   this.repo=repo;
+	}
+	
+	@Override
+	public String registerDepartment(Department dep) {
+		String msg=repo.save(dep).getDepId()+"is save";
+		
+		return msg;
+	}
+
+	@Override
+	public Department getDepById(Integer id) {
+		// TODO Auto-generated method stub
+		Optional<Department> opt=repo.findById(id);
+		if(opt.isPresent()) {
+			return opt.get();
+		}	
+		return null;
+	}
+	
+	
+}

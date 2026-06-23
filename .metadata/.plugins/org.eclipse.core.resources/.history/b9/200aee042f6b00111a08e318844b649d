@@ -1,0 +1,8 @@
+package com.stars.clients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="department-service")
+public interface IDepartmentCliet {
+
+}

@@ -1,0 +1,34 @@
+package com.stars.entity;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Table(name="employee")
+@Data
+public class Employee {
+
+	@Id
+	@SequenceGenerator(  name = "emp_seq_gen",
+	        sequenceName = "EMP_SEQ",
+	        allocationSize = 3)
+	@GeneratedValue(generator = "dep",strategy = GenerationType.SEQUENCE)
+	private Integer employeeId;
+	
+	private String employeeName;
+	
+	private String designation;
+	
+	private Double salary;
+	
+	private Integer departmentId;
+	
+}

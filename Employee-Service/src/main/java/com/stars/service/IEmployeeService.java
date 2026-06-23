@@ -1,0 +1,13 @@
+package com.stars.service;
+
+import com.stars.dto.EmployeeDTO;
+import com.stars.entity.Employee;
+
+public interface IEmployeeService {
+
+	public String registerEmployee(Employee employee);
+	
+	public EmployeeDTO searchEmployee(Integer id);
+	
+	public String deleteEMployee(Integer id);
+}
